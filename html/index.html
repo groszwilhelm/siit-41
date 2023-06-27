@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello world</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="This is a description for my website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./main.js"></script>
+  </head>
+
+  <body>
+    <a href="/www.google.com.html">Link to google.com</a>
+    <a href="https://www.google.com">Link to google.com</a>
+    <a href="mailto:groszwilhelm@gmail.com">Email me!</a>
+    <a href="tel:0221121312">Call me!</a>
+    <a href="about.html#important" target="_blank">Link to About</a>
+    <a href="#important">Link to About</a>
+
+    <ol type="I">
+      <li>Hello</li>
+      <li>Hello 2</li>
+      <li>Hello 3</li>
+      <li>Hello 4</li>
+    </ol>
+
+    <ul type="circle">
+      <li>Hello</li>
+      <li>Hello 2</li>
+      <li>Hello 3</li>
+      <li>Hello 4</li>
+    </ul>
+
+    <dl>
+      <dt>Beast of Bodmin</dt>
+      <dd>A large feline inhabiting Bodmin Moor.</dd>
+
+      <dt>Morgawr</dt>
+      <dd>A sea serpent.</dd>
+
+      <dt>Owlman</dt>
+      <dd>A giant owl-like creature.</dd>
+    </dl>
+
+    <div>
+      <img src="./picture.png" width="300px" />
+    </div>
+
+    <div>
+      <img
+        src="https://picsum.photos/id/237/200/300"
+        height="300px"
+        alt="Caine negru"
+      />
+    </div>
+
+    <picture>
+      <source
+        srcset="https://picsum.photos/id/233/800/1200"
+        media="(min-width: 1000px)"
+      />
+      <source
+        srcset="https://picsum.photos/id/235/400/600"
+        media="(min-width: 800px)"
+      />
+      <source
+        srcset="https://picsum.photos/id/234/200/300"
+        media="(min-width: 500px)"
+      />
+      <img src="https://picsum.photos/id/232/200/300" height="300px" />
+    </picture>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi eaque
+      explicabo praesentium, cumque placeat corrupti illum quis, consectetur
+      mollitia alias animi molestiae inventore ea quisquam quidem sit voluptates
+      repellendus iure! Ut autem quidem distinctio voluptas tempora accusantium
+      sunt, ullam nihil? Beatae, temporibus. Odit, hic natus magni alias
+      deleniti, consectetur molestiae eveniet praesentium nobis quidem culpa
+      quibusdam. Fugit numquam dicta porro! Inventore quae architecto suscipit
+      quam voluptas laborum laudantium, sapiente dolorum, corporis deleniti
+      optio! Suscipit veritatis veniam voluptates ea nihil deleniti atque
+      dolores, ad corporis incidunt, voluptatem doloremque nostrum consequatur
+      itaque? Nulla magni incidunt tempora repudiandae earum nobis error ipsam,
+      laudantium autem assumenda dolore culpa deserunt, veniam non quisquam hic.
+      Mollitia saepe cupiditate nostrum, illo facilis eligendi inventore dolore
+      incidunt necessitatibus? Molestiae, consequuntur ullam? Asperiores labore
+      perspiciatis mollitia veniam, dolorem consequuntur doloremque? Non cum
+      fuga error porro nulla delectus et sequi ad debitis libero, quos modi,
+      nihil fugit, ullam molestias earum. Quaerat nostrum ut corrupti id, vero
+      magni reprehenderit magnam dolores sed quam. Blanditiis commodi similique
+      sunt unde impedit, iusto aut molestias velit quisquam animi repellendus,
+      expedita eveniet, sit atque explicabo? Reiciendis veritatis vel iste modi
+      dolor sequi numquam repellat eius assumenda? Perferendis dignissimos eaque
+      laudantium, beatae saepe cupiditate aperiam veniam voluptatibus
+      exercitationem odio est maiores iste similique corrupti, modi ea. Totam
+      itaque cumque possimus. Quasi veritatis maiores quas dicta doloribus
+      sapiente recusandae quo saepe labore facilis? Quia doloremque doloribus
+      necessitatibus cumque sequi earum modi consequuntur corporis non, ratione
+      velit id! Iusto, distinctio excepturi. Incidunt, pariatur. Voluptate
+      veniam quos ea dolorum ipsa quasi libero voluptatum illo, illum
+      aspernatur, provident praesentium voluptas recusandae, culpa aut ducimus
+      harum maiores commodi dignissimos pariatur fugit. Neque tenetur sapiente
+      autem alias? Cupiditate minus, repellat blanditiis itaque natus cum quis
+      dignissimos deleniti velit consequuntur cumque, quasi quia molestias
+      commodi ratione aut obcaecati voluptate, iste facilis! Ratione,
+      perferendis.
+    </p>
+
+    <h2>Hello</h2>
+
+    <table border="1" style="margin-bottom: 15px">
+      <colgroup>
+        <col style="background-color: red" />
+        <col style="background-color: blue" />
+        <col style="background-color: green" span="2" />
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th>Cell 1</th>
+          <th>Cell 2</th>
+          <th>Cell 3</th>
+          <th>Cell 4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td colspan="2">1</td>
+          <td>2</td>
+          <!-- <td>3</td> -->
+          <!-- <td>4</td> -->
+        </tr>
+      </tbody>
+      <tfooter></tfooter>
+    </table>
+
+    <form>
+      <fieldset>
+        <label tabindex="0" for="email">Email</label>
+        <input id="email" type="text" placeholder="hello@gmail.com" autofocus />
+      </fieldset>
+
+      <fieldset>
+        <label for="password">Password</label>
+        <input id="password" type="password" />
+      </fieldset>
+
+      <fieldset>
+        <label for="description">Description</label>
+        <textarea id="description" rows="10" cols="10"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <label for="date">Date</label>
+        <input id="date" type="date" />
+      </fieldset>
+
+      <fieldset>
+        <label>Gender</label>
+
+        <label for="f">F</label>
+        <input id="f" name="gender" type="radio" checked />
+
+        <label for="m">M</label>
+        <input for="m" name="gender" type="radio" />
+      </fieldset>
+
+      <fieldset>
+        <label>Car</label>
+
+        <label for="golf">Golf</label>
+        <input id="golf" type="checkbox" checked />
+        
+        <label for="passat">Passat</label>
+        <input id="passat" type="checkbox" />
+      </fieldset>
+
+      <fieldset>
+        <label>Car</label>
+
+        <select>
+          <option>Golf</option>
+          <option selected>Passat</option>
+        </select>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
+
+<!-- 
+  URL:
+
+  https://www.google.com/shop?q=dacia#imporant
+  
+  https://www.google.com/shop/dacia#imporant
+
+  https -> schmea (http/ https - protocol)
+
+  www.google.com -> Domain name (top level domain (.com); domain: google, sub domain (www.))
+
+  /shop/ -> path
+
+  ?q -> Query parameter
+
+  #important -> fragment
+ -->
