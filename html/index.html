@@ -141,53 +141,61 @@
       <tfooter></tfooter>
     </table>
 
-    <form>
+    <p>2 <sup>23</sup> </p>
+
+    <form method="post">
       <fieldset>
         <label tabindex="0" for="email">Email</label>
-        <input id="email" type="text" placeholder="hello@gmail.com" autofocus />
+        <input id="email" type="email" placeholder="hello@gmail.com" autofocus name="email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
       </fieldset>
 
       <fieldset>
         <label for="password">Password</label>
-        <input id="password" type="password" />
+        <input id="password" type="password" required name="password" maxlength="10" />
+      </fieldset>
+
+      <fieldset>
+        <label for="age">Age</label>
+        <input id="age" type="number" required name="age" max="1" min="100" />
       </fieldset>
 
       <fieldset>
         <label for="description">Description</label>
-        <textarea id="description" rows="10" cols="10"></textarea>
+        <textarea id="description" rows="10" cols="10" name="description"></textarea>
       </fieldset>
 
       <fieldset>
         <label for="date">Date</label>
-        <input id="date" type="date" />
+        <input id="date" type="date" name="date" required />
       </fieldset>
 
       <fieldset>
         <label>Gender</label>
 
         <label for="f">F</label>
-        <input id="f" name="gender" type="radio" checked />
+        <input id="f" name="gender" type="radio" checked value="f" />
 
         <label for="m">M</label>
-        <input for="m" name="gender" type="radio" />
+        <input for="m" name="gender" type="radio" value="m" />
       </fieldset>
 
       <fieldset>
         <label>Car</label>
 
         <label for="golf">Golf</label>
-        <input id="golf" type="checkbox" checked />
+        <input id="golf" name="golf" type="checkbox" checked value="golf-checked" />
         
         <label for="passat">Passat</label>
-        <input id="passat" type="checkbox" />
+        <input id="passat" name="passat" type="checkbox" value="passat-checked" />
       </fieldset>
 
       <fieldset>
         <label>Car</label>
 
-        <select>
+        <select required name="cartype">
           <option>Golf</option>
           <option selected>Passat</option>
+          <option>Passat</option>
         </select>
       </fieldset>
 
@@ -213,3 +221,16 @@
 
   #important -> fragment
  -->
+
+<!-- Request types (Methods) -->
+<!-- CRUD - Create Read Update Delete -->
+<!-- GET -> Retrieves a resource
+
+     POST -> Create a resource
+     PUT -> Create / Update a resource 
+     PATCH -> Partial update 
+     DELETE -> Remove a rsource -->
+
+<!-- Request -->
+<!-- Headers -> meta information -->
+<!-- Body -> Actual content that is sent to the server -->
