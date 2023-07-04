@@ -1,0 +1,108 @@
+/* Target everything */
+
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid deeppink;
+}
+
+/* Element (tag) selector */
+li {
+  list-style-type: none;
+}
+
+/* Id selector */
+#blue {
+  background-color: blue;
+}
+
+/* Class selector */
+.list-item {
+  background-color: deeppink;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+/* Attribute selector */
+
+[disabled] {
+  color: red;
+}
+
+[type="text"] {
+  /* border: 1px dotted green; */
+  border: dotted green;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+}
+
+/* Pseudo classes */
+a:visited {
+  color: deeppink;
+}
+
+a:active {
+  color: yellow;
+}
+
+li:first {}
+
+.border-hover:hover {
+  border: solid deeppink;
+}
+
+/* number, even, odd */
+li:nth-child(2n-1) {
+  color: green;
+}
+
+/* Pseudo elements */
+.star::before {
+  content: "⭐️";
+  font-size: 25px;
+}
+
+.star::after {
+  content: "⭐️";
+  font-size: 25px;
+}
+
+.hello::first-letter {
+  font-size: 50px;
+}
+
+.hello {
+  font-style: italic;
+  text-transform: uppercase;
+  /* text-shadow: 2px 2px 2px black; */
+}
+
+.container1 {
+  color: purple;
+  font-size: 15px;
+}
+
+.container1 > p:nth-child(2) {
+  color: blue;
+}
+
+.special-class {
+
+}
+
+p + p {
+  color: red;
+}
+
+div ~ p {
+  color: deeppink;
+}
+
+/* Any descendant combinator " " */
+/* Direct descendant combinator > */
+/* Sibling combinator ~ */
