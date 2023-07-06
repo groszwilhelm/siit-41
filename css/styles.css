@@ -103,6 +103,30 @@ div ~ p {
   color: deeppink;
 }
 
+div > div div > div > p {
+
+}
+
+section.hello#id[attr=""] {
+
+}
+
+/* <div>
+  <div>
+    <div>
+      <section class="hello">
+        <div>
+          <div>
+            <p></p>
+          </div>
+        </div>
+      </section>
+
+      <div class="hello"></div>
+    </div>
+  </div>
+</div> */
+
 /* Any descendant combinator " " */
 /* Direct descendant combinator > */
 /* Sibling combinator ~ */

@@ -1,0 +1,26 @@
+.container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+h2 {
+  margin: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.box {
+  box-sizing: border-box;
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+  border: 2px solid green;
+  background-color: hsl(0, 100%, 50%);
+}
+
+.selector {
+  margin: 10px 15px 20px 45px;
+  padding: 10px 15px 20px 45px;
+}
