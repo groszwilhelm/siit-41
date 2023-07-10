@@ -1,0 +1,72 @@
+:root {
+  --box-size: 150px;
+  --primary-color: #35a479;
+  --border-size-small: 1.25px;
+  --border-size-medium: 2.25px;
+  --border-size-large: 3.45px;
+}
+
+.box {
+  width: var(--box-size);
+  height: var(--box-size);
+  border: var(--border-size-medium) solid var(--primary-color);
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: var(--primary-color);
+}
+
+/* CSS Positioning */
+/* 
+  Static -> Default positioning -> Flow layout rendering
+  Relative -> Positions the element relative to itself
+  Absolute -> Positions the element relative to closest positioned element, or root element (if there are no positioned parents)
+  Fixed -> Positions element relative to viewport
+  Sticky -> Combination of fixed and absolute
+*/
+
+.box-relative {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+.box-container {
+  position: relative;
+}
+
+.box-absolute {
+  position: absolute;
+  background-color: red;
+  left: 200px;
+}
+
+.box-fixed {
+  position: fixed;
+  /* inset: 0; */
+  top: 0;
+  /* left: 0;
+  right: 0;
+  bottom: 0; */
+  background-color: var(--primary-color);
+  margin: 0;
+  z-index: 2;
+}
+
+.box-fixed-2 {
+  left: 50px;
+  border: 1px solid;
+  z-index: 1;
+  background-color: deeppink;
+}
+
+.sticky-container {
+  height: 600px;
+}
+
+.card-sticky {
+  position: sticky;
+  top: 50px;
+  background-color: blue;
+}

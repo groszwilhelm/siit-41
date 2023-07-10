@@ -1,0 +1,54 @@
+
+/* #title {
+  color: deeppink;
+} */
+
+[class="title"] {
+  color: green;
+}
+
+.title {
+  color: red;
+}
+
+h1 {
+  color: purple;
+}
+
+/* | important! | inline styles | id | class, attribute, pseudo classes | element, pseudo elements */
+/* 0, 1, 1, 1, 1 */
+
+/* h1.title[class="title"] */
+/* 0, 0, 0, 2, 1 */
+
+
+.title[class="title"] {
+  color: black;
+}
+
+.title[class="title"] {
+  color: blue;
+}
+
+/* h1.title.h1.h1.h1.h1.h1.h1.h1.h1.h1[class="title"]#title */
+/* 0, 0, 1, 1000, 1 */
+
+.title.title {
+  color: red !important;
+}
+
+.title#title {
+  color: green !important;
+}
+
+.title {
+  color: red;
+}
+
+.image-description {
+  display: inline;
+}
+
+.img {
+  float: left;
+}
