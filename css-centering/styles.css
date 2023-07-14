@@ -1,0 +1,32 @@
+:root {
+  --box-size: 250px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  /* position: absolute; */
+
+  /* top: calc(50% - (var(--box-size) / 2));
+  left: calc(50% - (var(--box-size) / 2)); */
+  
+  /* top: 50%;
+  left: 50%; */
+
+  /* transform: translate(-50%, -50%); */
+
+  /* width: var(--box-size);
+  height: var(--box-size); */
+  border: 2px solid deeppink;
+}

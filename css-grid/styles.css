@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(10, 50px);
+  gap: 10px;
+}
+
+.grid div {
+  border: 1px solid;
+}
+
+.grid-item {
+  grid-column: 1 / -1;
+  grid-row: 3 / span 1;
+}
