@@ -1,6 +1,6 @@
 let students = [
     {
-        name: 'Adi',
+        name: 'Adi'
     },
     {
         name: 'Cristi'
