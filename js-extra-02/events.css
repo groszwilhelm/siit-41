@@ -1,0 +1,20 @@
+.output{
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.output-add-1{
+    background-color: lightgrey;
+}
+
+.output-add-5{
+    background-color: lightblue;
+}
+
