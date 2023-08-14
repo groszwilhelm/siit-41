@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1>Advanced DOM techniques</h1>
+    <div>
+        Set clicks: <input type="number" id="user-input">
+        <button id="user-btn">SET CLICKS!</button>
+    </div>
+    <div>
+        Number of registered clicks: 
+        <output>0</output>
+    </div>
+    <div>
+        <button data-clicks-change="-5" class="change-clicks"> -5</button>
+        <button data-clicks-change="-1" class="change-clicks"> -1</button>
+        <button class="reset">reset</button>
+        <button data-clicks-change="1" class="change-clicks"> + 1</button>
+        <button data-clicks-change="5" class="change-clicks"> + 5</button>
+    </div>
+</body>
+</html>
