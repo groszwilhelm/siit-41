@@ -1,22 +1,21 @@
 
 let n = 'Ludovic';
 
-function greet(){
-    n = 'Adi';
+function outerFunction(){
+    let n = 'Adi';
 
-    console.log(`local scope function greet ${n} before sayHi was called`);
+    console.log(`local scope function outerFunction: ${n} (before innerFunction was called)`);
 
-    function sayHi(){
-        n = 'Vader';
-        console.log(`local scope function sayHi ${n}`);
+    function innerFunction(){
+        let n = 'Vader';
+        console.log(`local scope function innerFunction: ${n}`);
     }
 
-    sayHi();
+    innerFunction();
 
-    console.log(`local scope function greet ${n} after sayHi was called`);
+    console.log(`local scope function outerFunction: ${n} (after innerFunction was called)`);
 }
 
-
-greet();
-
-console.log(`global scope ${n}`);
+console.log(`global scope ${n} (before outer function was called)`);
+outerFunction();
+console.log(`global scope ${n} (after outer function was called)`);
