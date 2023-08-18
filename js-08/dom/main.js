@@ -27,7 +27,7 @@ function newClick(evt){
     userClicks += Number(targetElem.dataset.clicksChange);
 
     // display the number of clicks in the UI
-     output.innerText = userClicks;
+    output.innerText = userClicks;
 }
 
 const changeBtns = document.querySelectorAll('button.change-clicks');
