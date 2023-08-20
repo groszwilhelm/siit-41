@@ -1,0 +1,15 @@
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.game-interface{
+    width: 75%;
+    border: 1px solid;
+    margin: auto;
+    padding: 1rem;
+    text-align: center  ;
+}
