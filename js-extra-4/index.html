@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - registration</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+
+        <div id="register-compoment">
+            <div>
+                <label for="registration-name">Name: </label>
+                <input type="text" id="registration-name" value="Ad">
+                <div class="error" id="name-error"></div>
+            </div>
+            <div>
+                <label for="registration-email">Email: </label>
+                <input type="text" id="registration-email" value="test@test.com">
+                <div class="error" id="email-error"></div>
+            </div>
+            <div>
+                <label for="registration-password">Password: </label>
+                <input type="password" id="registration-password" value="123456">
+                <div class="error"></div>
+            </div>
+            <div>
+                <label for="registration-retype-password">Re-type password: </label>
+                <input type="password" id="registration-retype-password" value="123456">
+                <div class="error" id="password_confirm-error"></div>
+            </div>
+            <div>
+                <button id="registration-button">Create an account!</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
