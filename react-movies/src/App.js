@@ -2,8 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import Movie from './movies/Movie';
 
-const greeting = 'Hello from JS';
-
 function App() {
   return (
     <div className="App">
@@ -11,7 +9,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p style={{ backgroundColor: "red" }}>
           Edit <code>src/App.js</code> and save to reload.
-          {greeting}
         </p>
         <a
           className="App-link"
