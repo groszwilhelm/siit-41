@@ -1,0 +1,11 @@
+.component{
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid green;
+    width: 40vw;
+    height: 30rem;    
+}
+
+.hidden{
+    display: none;
+}
