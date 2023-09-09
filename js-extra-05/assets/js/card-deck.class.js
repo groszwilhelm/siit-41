@@ -1,4 +1,4 @@
-class CardDeck {
+export default class CardDeck {
     // 
     constructor(cards) {
         this.setCards(cards);

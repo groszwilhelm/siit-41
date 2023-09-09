@@ -1,22 +1,10 @@
 console.log('main.js is loaded');
 
-const cards = [
-    {
-        name: "Armura magică",
-        power: 15
-    },
-    {
-        name: "Sirius din cer",
-        power: 3
-    },
-    {
-        name: "Pădurea întunecată",
-        power: -14
-    },
-    {
-        name: "Comandantul lighioanelor",
-        power: -10
-    }
-];
+import cards from './cards.js';
+import CardDeck from './card-deck.class.js';
 
 const cardDeck = new CardDeck(cards);
+for (let i = 0; i < 10; i++) {
+    const card = cardDeck.pop();
+    console.log(card);
+}
