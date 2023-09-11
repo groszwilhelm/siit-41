@@ -78,3 +78,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Major version.minor version.patch version
 
 21.0.0
+
+#Steps for starting a new React application
+1. Install Node.js (One time only - if we don't have it).
+2. Open VS Code.
+3. Create React app: npx create-react-app (Only first time - Per project - When I want to create a new project).
+4. If the project is taken from a public repository (git clone): npm install (Root of the project)
+5. Start the project: npm start (Root of the project)
