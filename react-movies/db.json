@@ -1,0 +1,76 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Great Lands",
+      "yearOfRelease": 2019,
+      "genre": "movie",
+      "image": "https://picsum.photos/id/1/300/200",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 2,
+      "title": "Hello world",
+      "yearOfRelease": 2019,
+      "genre": "movie",
+      "image": "https://picsum.photos/id/2/300/200",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 3,
+      "title": "The Small Lands",
+      "yearOfRelease": 2019,
+      "genre": "movie",
+      "image": "https://picsum.photos/id/3/300/200",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 4,
+      "title": "New lands",
+      "yearOfRelease": 2019,
+      "genre": "movie",
+      "image": "https://picsum.photos/id/4/300/200",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 5,
+      "title": "No Lands",
+      "yearOfRelease": 2019,
+      "genre": "movie",
+      "image": "https://picsum.photos/id/5/300/200",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 6,
+      "title": "The Great",
+      "yearOfRelease": 2019,
+      "genre": "movie",
+      "image": "https://picsum.photos/id/6/300/200",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 7,
+      "title": "Great Lands",
+      "yearOfRelease": 2019,
+      "genre": "movie",
+      "image": "https://picsum.photos/id/7/300/200",
+      "pg": "PG",
+      "bookmarked": false
+    },
+    {
+      "id": 8,
+      "title": "Lands",
+      "yearOfRelease": 2019,
+      "genre": "movie",
+      "image": "https://picsum.photos/id/8/300/200",
+      "pg": "PG",
+      "bookmarked": false
+    }
+  ]
+}
