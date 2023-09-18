@@ -3,9 +3,10 @@ import "./Landing.css";
 import { useEffect, useState } from "react";
 import { Movie } from './movie/Movie';
 
-const initialMovies = [];
+// SPA - Single Page Application
 
 export default function Landing() {
+  const [initialMovies, setInitialMovies] = useState([]);
   const [movies, setMovies] = useState(initialMovies);
   const [searchTerm, setSearchTerm] = useState();
 
@@ -17,7 +18,10 @@ export default function Landing() {
   useEffect(() => {
     fetch("http://localhost:3004/movies")
       .then((response) => response.json())
-      .then((fetchedMovies) => setMovies(fetchedMovies));
+      .then((fetchedMovies) => {
+        setMovies(fetchedMovies);
+        setInitialMovies(fetchedMovies);
+      });
   }, []);
 
   useEffect(() => {

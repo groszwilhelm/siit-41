@@ -11,18 +11,18 @@
     },
     {
       "id": 2,
-      "title": "Hello world",
-      "yearOfRelease": 2019,
-      "genre": "movie",
-      "image": "https://picsum.photos/id/2/300/200",
-      "pg": "PG",
+      "title": "A cute dog movie",
+      "yearOfRelease": "2019",
+      "genre": "series",
+      "image": "https://picsum.photos/id/237/200/300",
+      "pg": "14+",
       "bookmarked": false
     },
     {
       "id": 3,
-      "title": "The Small Lands",
-      "yearOfRelease": 2019,
-      "genre": "movie",
+      "title": "The Small Lands version 2",
+      "yearOfRelease": "2019",
+      "genre": "series",
       "image": "https://picsum.photos/id/3/300/200",
       "pg": "PG",
       "bookmarked": false
@@ -58,7 +58,7 @@
       "id": 7,
       "title": "Great Lands",
       "yearOfRelease": 2019,
-      "genre": "movie",
+      "genre": "series",
       "image": "https://picsum.photos/id/7/300/200",
       "pg": "PG",
       "bookmarked": false

@@ -1,14 +1,18 @@
 import BookmarkIcon from "../../icons/bookmark/Bookmark";
 import BookmarkFilledIcon from "../../icons/bookmark-filled/Bookmark-filled";
 
+import { Link } from 'react-router-dom';
+
 export function Movie(props) {
   const { movie, bookmark } = props;
-  const { title, yearOfRelease, pg, genre, image, bookmarked } = movie;
+  const { id, title, yearOfRelease, pg, genre, image, bookmarked } = movie;
 
   return (
     <article className="movie">
       <div className="movie__image-container">
-        <img src={image} alt="Movie"></img>
+        <Link to={`movie/${id}`}>
+          <img src={image} alt="Movie"></img>
+        </Link>
         <span
           className="movie__bookmark"
           onClick={() => bookmark(movie, bookmarked)}
