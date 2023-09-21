@@ -9,6 +9,7 @@ export default function Landing() {
   const [initialMovies, setInitialMovies] = useState([]);
   const [movies, setMovies] = useState(initialMovies);
   const [searchTerm, setSearchTerm] = useState();
+  const [error, setError] = useState(null);
 
   function bookmark(movie, bookmarked) {
     movie.bookmarked = !bookmarked;
@@ -16,12 +17,14 @@ export default function Landing() {
   }
 
   useEffect(() => {
+    setError(null);
     fetch("http://localhost:3004/movies")
       .then((response) => response.json())
       .then((fetchedMovies) => {
         setMovies(fetchedMovies);
         setInitialMovies(fetchedMovies);
-      });
+      })
+      .catch((err) => setError(err));
   }, []);
 
   useEffect(() => {
@@ -35,6 +38,14 @@ export default function Landing() {
       setMovies(initialMovies);
     }
   }, [searchTerm]);
+
+  if (error) {
+    return (
+      <section>
+       There has been a problem loading our movies. Please try again later.
+      </section>
+    )
+  }
 
   return (
     <main className="main">

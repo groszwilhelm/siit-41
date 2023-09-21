@@ -1,9 +1,15 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
+import Dialog from "../dialog/Dialog";
+import MovieForm from '../movie-form/Movie-form';
 
 export default function MovieDetails() {
   let { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const [showDialog, setShowDialog] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:3004/movies/${id}`)
@@ -11,32 +17,41 @@ export default function MovieDetails() {
       .then((movieFromServer) => setMovie(movieFromServer));
   }, []);
 
-  function onSubmit(event) {
-    event.preventDefault();
-    const { url, yearOfRelease, genre, pg, title } = event.target;
-
-    const updatedMovie = {
-      ...movie,
-      image: url.value,
-      yearOfRelease: yearOfRelease.value,
-      genre: genre.value,
-      pg: pg.value,
-      title: title.value,
-    };
-
+  function onSubmit(updatedMovie) {
     fetch(`http://localhost:3004/movies/${id}`, {
       method: "PUT",
       body: JSON.stringify(updatedMovie),
       headers: {
-        'content-type': 'application/json',
-      }
+        "content-type": "application/json",
+      },
     })
       .then((response) => response.json())
       .then((movieFromServer) => setMovie(movieFromServer));
   }
 
+  function showDeleteDialog() {
+    setShowDialog(true);
+  }
+
+  function deleteMovie() {
+    fetch(`http://localhost:3004/movies/${id}`, {
+      method: "DELETE",
+    }).then(() => navigate("/"));
+  }
+
+  function hideDeleteDialog() {
+    setShowDialog(false);
+  }
+
   return (
     <section>
+      {showDialog && (
+        <Dialog
+          yesCallback={deleteMovie}
+          noCallback={hideDeleteDialog}
+          title="Are you sure you want to remove the movie?"
+        />
+      )}
       <article className="movie">
         <div className="movie__image-container">
           <img src={movie?.image} alt="Movie"></img>
@@ -49,58 +64,9 @@ export default function MovieDetails() {
         <h5 className="movie__title">{movie?.title}</h5>
       </article>
 
-      <form onSubmit={onSubmit}>
-        <fieldset>
-          <label htmlFor="url">URL:</label>
-          <input
-            id="url"
-            type="text"
-            name="url"
-            defaultValue={movie?.image}
-          ></input>
-        </fieldset>
-
-        <fieldset>
-          <label htmlFor="yor">Year of release:</label>
-          <input
-            name="yearOfRelease"
-            id="yor"
-            type="number"
-            min={1800}
-            max={3000}
-            defaultValue={movie?.yearOfRelease}
-          ></input>
-        </fieldset>
-
-        <fieldset>
-          <label htmlFor="genre">Genre:</label>
-          <select id="genre" defaultValue={movie?.genre} name="genre">
-            <option value="movie">Movie</option>
-            <option value="series">Series</option>
-          </select>
-        </fieldset>
-
-        <fieldset>
-          <label htmlFor="pg">PG:</label>
-          <select id="pg" defaultValue={movie?.pg} name="pg">
-            <option value="PG">PG</option>
-            <option value="18+">18+</option>
-            <option value="14+">14+</option>
-          </select>
-        </fieldset>
-
-        <fieldset>
-          <label htmlFor="title">Title:</label>
-          <input
-            id="title"
-            type="text"
-            defaultValue={movie?.title}
-            name="title"
-          ></input>
-        </fieldset>
-
-        <button>Submit</button>
-      </form>
+      <button onClick={showDeleteDialog}>Delete</button>
+      
+      <MovieForm onSubmit={onSubmit} movie={movie}></MovieForm>
     </section>
   );
 }

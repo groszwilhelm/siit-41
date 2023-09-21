@@ -10,6 +10,9 @@ export default function Navigation() {
         <li>
           <Link to="/about">About</Link>
         </li>
+        <li>
+          <Link to="/create-movie">Create Movie</Link>
+        </li>
       </ul>
     </nav>
   );

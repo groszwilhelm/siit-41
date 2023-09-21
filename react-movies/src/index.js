@@ -8,6 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 import Landing from "./landing/Landing";
 import MovieDetails from "./movie-details/Movie-details";
 import Navigation from "./Navigation";
+import CreateMovie from "./create-movie/Create-movie";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,15 @@ const router = createBrowserRouter([
       <>
         <Navigation></Navigation>
         <MovieDetails></MovieDetails>
+      </>
+    ),
+  },
+  {
+    path: "create-movie",
+    element: (
+      <>
+        <Navigation></Navigation>
+        <CreateMovie></CreateMovie>
       </>
     ),
   },
