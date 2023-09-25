@@ -1,4 +1,5 @@
 
+// Uncontrolled React inputs
 export default function MovieForm(props) {
   const { onSubmit, movie = {} } = props;
 

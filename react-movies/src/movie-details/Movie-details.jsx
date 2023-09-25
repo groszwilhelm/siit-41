@@ -1,20 +1,28 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import Dialog from "../dialog/Dialog";
 import MovieForm from '../movie-form/Movie-form';
+import { MoviesContext } from '../MoviesContext';
 
 export default function MovieDetails() {
   let { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [showDialog, setShowDialog] = useState(false);
+  const { movies } = useContext(MoviesContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:3004/movies/${id}`)
-      .then((response) => response.json())
-      .then((movieFromServer) => setMovie(movieFromServer));
+    const selectedMovie = movies.find((storedMovie) => storedMovie.id === Number(id));
+
+    if (selectedMovie) {
+      setMovie(selectedMovie);
+    } else {
+      fetch(`http://localhost:3004/movies/${id}`)
+        .then((response) => response.json())
+        .then((movieFromServer) => setMovie(movieFromServer));
+    }
   }, []);
 
   function onSubmit(updatedMovie) {

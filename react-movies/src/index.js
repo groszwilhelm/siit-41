@@ -1,57 +1,55 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import reportWebVitals from "./reportWebVitals";
 
-import Landing from "./landing/Landing";
-import MovieDetails from "./movie-details/Movie-details";
-import Navigation from "./Navigation";
-import CreateMovie from "./create-movie/Create-movie";
+import App from './App';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <>
-        <Navigation></Navigation>
-        <Landing></Landing>
-      </>
-    ),
-  },
-  {
-    path: "about",
-    element: (
-      <>
-        <Navigation></Navigation>
-        <div>About</div>
-      </>
-    ),
-  },
-  {
-    path: "movie/:id",
-    element: (
-      <>
-        <Navigation></Navigation>
-        <MovieDetails></MovieDetails>
-      </>
-    ),
-  },
-  {
-    path: "create-movie",
-    element: (
-      <>
-        <Navigation></Navigation>
-        <CreateMovie></CreateMovie>
-      </>
-    ),
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: (
+//       <>
+//         <Navigation></Navigation>
+//         <Landing></Landing>
+//       </>
+//     ),
+//   },
+//   {
+//     path: "about",
+//     element: (
+//       <>
+//         <Navigation></Navigation>
+//         <div>About</div>
+//       </>
+//     ),
+//   },
+//   {
+//     path: "movie/:id",
+//     element: (
+//       <>
+//         <Navigation></Navigation>
+//         <MovieDetails></MovieDetails>
+//       </>
+//     ),
+//   },
+//   {
+//     path: "create-movie",
+//     element: (
+//       <>
+//         <Navigation></Navigation>
+//         <CreateMovie></CreateMovie>
+//       </>
+//     ),
+//   },
+// ]);
 
+// {/* <RouterProvider router={router}></RouterProvider> */}
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <App></App>
   </React.StrictMode>
 );
 

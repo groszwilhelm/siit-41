@@ -1,15 +1,17 @@
 import "./Landing.css";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Movie } from './movie/Movie';
+import { MoviesContext} from '../MoviesContext';
 
 // SPA - Single Page Application
 
 export default function Landing() {
   const [initialMovies, setInitialMovies] = useState([]);
-  const [movies, setMovies] = useState(initialMovies);
+  // const [movies, setMovies] = useState(initialMovies);
   const [searchTerm, setSearchTerm] = useState();
   const [error, setError] = useState(null);
+  const { movies, setMovies } = useContext(MoviesContext);
 
   function bookmark(movie, bookmarked) {
     movie.bookmarked = !bookmarked;

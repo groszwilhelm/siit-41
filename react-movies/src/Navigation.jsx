@@ -13,6 +13,9 @@ export default function Navigation() {
         <li>
           <Link to="/create-movie">Create Movie</Link>
         </li>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
       </ul>
     </nav>
   );
