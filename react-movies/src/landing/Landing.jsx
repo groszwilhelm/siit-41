@@ -3,6 +3,8 @@ import "./Landing.css";
 import { useContext, useEffect, useState } from "react";
 import { Movie } from './movie/Movie';
 import { MoviesContext} from '../MoviesContext';
+import { useNavigate } from 'react-router-dom';
+import { UserContext, getAccessToken } from '../UserContext';
 
 // SPA - Single Page Application
 
@@ -12,6 +14,8 @@ export default function Landing() {
   const [searchTerm, setSearchTerm] = useState();
   const [error, setError] = useState(null);
   const { movies, setMovies } = useContext(MoviesContext);
+  const navigate = useNavigate();
+  const { user } = useContext(UserContext);
 
   function bookmark(movie, bookmarked) {
     movie.bookmarked = !bookmarked;
@@ -20,8 +24,25 @@ export default function Landing() {
 
   useEffect(() => {
     setError(null);
-    fetch("http://localhost:3004/movies")
-      .then((response) => response.json())
+    
+    const bearerToken = user?.accessToken || getAccessToken();
+
+    fetch("http://localhost:3004/movies", {
+      headers: {
+        Authorization: `Bearer ${bearerToken}`,
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+
+        if (response.status === 401) {
+          navigate("/login");
+        }
+
+        throw new Error(response);
+      })
       .then((fetchedMovies) => {
         setMovies(fetchedMovies);
         setInitialMovies(fetchedMovies);

@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-import './Register.css';
+import "./Login.css";
+import { UserContext } from '../../UserContext';
+import { useNavigate } from 'react-router-dom';
 
 // Controlled form inputs
-export default function Register() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState(null);
+  const { user, setUser } = useContext(UserContext);
+
+  const navigate = useNavigate();
 
   function register(event) {
     event.preventDefault();
@@ -17,7 +22,7 @@ export default function Register() {
       password,
     };
 
-    fetch("http://localhost:3004/register", {
+    fetch("http://localhost:3004/login", {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
@@ -25,7 +30,11 @@ export default function Register() {
       },
     })
       .then((response) => response.json())
-      .then((response) => console.log(response));
+      .then((response) => {
+        localStorage.setItem('access_token', JSON.stringify(response));
+        setUser(response);
+        navigate('/');
+      });
   }
 
   useEffect(() => {

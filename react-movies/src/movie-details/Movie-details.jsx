@@ -4,14 +4,17 @@ import { useParams, useNavigate } from "react-router-dom";
 import Dialog from "../dialog/Dialog";
 import MovieForm from '../movie-form/Movie-form';
 import { MoviesContext } from '../MoviesContext';
+import { getAccessToken, UserContext } from '../UserContext';
 
 export default function MovieDetails() {
   let { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [showDialog, setShowDialog] = useState(false);
   const { movies } = useContext(MoviesContext);
+  const { user } = useContext(UserContext);
 
   const navigate = useNavigate();
+  const bearerToken = user?.accessToken || getAccessToken();
 
   useEffect(() => {
     const selectedMovie = movies.find((storedMovie) => storedMovie.id === Number(id));
@@ -19,7 +22,11 @@ export default function MovieDetails() {
     if (selectedMovie) {
       setMovie(selectedMovie);
     } else {
-      fetch(`http://localhost:3004/movies/${id}`)
+      fetch(`http://localhost:3004/movies/${id}`, {
+        headers: {
+          Authorization: `Bearer ${bearerToken}`,
+        },
+      })
         .then((response) => response.json())
         .then((movieFromServer) => setMovie(movieFromServer));
     }
@@ -31,6 +38,7 @@ export default function MovieDetails() {
       body: JSON.stringify(updatedMovie),
       headers: {
         "content-type": "application/json",
+        Authorization: `Bearer ${bearerToken}`,
       },
     })
       .then((response) => response.json())
@@ -44,6 +52,7 @@ export default function MovieDetails() {
   function deleteMovie() {
     fetch(`http://localhost:3004/movies/${id}`, {
       method: "DELETE",
+      Authorization: `Bearer ${bearerToken}`,
     }).then(() => navigate("/"));
   }
 

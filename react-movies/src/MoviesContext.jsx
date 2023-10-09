@@ -13,3 +13,10 @@ export default function MoviesContextProvider(props) {
     </MoviesContext.Provider>
   );
 }
+
+// REST -> Representational State Transfer
+// entity -> resource
+// users/12/cars/2
+
+// calculate the sum of the following elemnts [1, 2, 4, 5, 6];
+

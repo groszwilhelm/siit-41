@@ -1,10 +1,16 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "groszwilhelm@gmail.com",
+      "password": "$2a$10$K0x/b8trMZfPzlXP14NNKu3PrQuo12NMnuRWARX6/kue//.LKgzxC",
+      "id": 1
+    }
+  ],
   "movies": [
     {
       "id": 6,
-      "title": "The Great",
-      "yearOfRelease": 2019,
+      "title": "The Great123456",
+      "yearOfRelease": "2019",
       "genre": "movie",
       "image": "https://picsum.photos/id/6/300/200",
       "pg": "PG",
